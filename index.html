@@ -17,28 +17,64 @@
     </section>
     <form id="form" class="container m-4 pl-4" method="POST">
       <div class="field">
-        <label class="label">Client Name</label>
+        <label class="label">Name</label>
         <div class="control">
           <input
             class="input"
             type="text"
-            placeholder="Your Client Name"
-            name="Client Name"
+            placeholder="Your Name"
+            name="Name"
           />
         </div>
       </div>
 
-      <!-- <div class="field">
-        <label class="label">Last Name</label>
+      <div class="field">
+        <label class="label">School & Course</label>
         <div class="control">
           <input
             class="input"
             type="text"
-            placeholder="Your Last Name"
-            name="Last Name"
+            placeholder="e.g HAU-SOC"
+            name="School & Course"
           />
         </div>
-      </div> -->
+      </div>
+
+      <div class="field">
+        <label class="label">Date of Shoot</label>
+        <div class="control">
+          <input
+            class="input"
+            type="date"
+            placeholder="Your Date of Shoot"
+            name="DOS"
+          />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Contact #</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="0965390..."
+            name="Contact"
+          />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Address</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="e.g Angeles City"
+            name="Address"
+          />
+        </div>
+      </div>
 
       <div class="field">
         <label class="label">Email</label>
@@ -53,47 +89,31 @@
       </div>
 
       <div class="field">
-        <label class="label">Password</label>
-        <div class="control">
-          <input
-            class="input"
-            type="password"
-            placeholder="Your Password"
-            name="Password"
-          />
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Date of Birth</label>
-        <div class="control">
-          <input
-            class="input"
-            type="date"
-            placeholder="Your Date of Birth"
-            name="DOB"
-          />
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Gender</label>
+        <label class="label">Graduation Package (College)</label>
         <div class="control">
           <label class="radio">
-            <input type="radio" name="Gender" value="male" /> Male
+            <input type="radio" name="Package Collage" value="A" /> Package A
           </label>
           <label class="radio">
-            <input type="radio" name="Gender" value="female" /> Female
+            <input type="radio" name="Package Collage" value="B" /> Package B
+          </label>
+          <label class="radio">
+            <input type="radio" name="Package Collage" value="C" /> Package C
           </label>
         </div>
       </div>
 
       <div class="field">
-        <label class="label">Agree to Terms</label>
+        <label class="label">Graduation Package (High School)</label>
         <div class="control">
-          <label class="checkbox">
-            <input type="checkbox" name="Agree To Terms" value="yes" /> I agree
-            to the terms and conditions
+          <label class="radio">
+            <input type="radio" name="Package HS" value="A" /> Package A
+          </label>
+          <label class="radio">
+            <input type="radio" name="Package HS" value="B" /> Package B
+          </label>
+          <label class="radio">
+            <input type="radio" name="Package HS" value="C" /> Package C
           </label>
         </div>
       </div>
