@@ -1,49 +1,44 @@
-var $form = $('Sheet1'),
-url = 'https://script.google.com/macros/s/AKfycbyfVNI5eovwnRB8xvm-Bd4gi0xrTsuO7FwshdA_vt2345uHwAvuuP1cubTiza9T_U9Gcg/exec'
-
-$.validate({
-  lang: 'en'
-});
-
-$('Sheet1').on('submit', function(e) {
+document.getElementById('signup-form').addEventListener('submit', async function (e) {
   e.preventDefault();
-  
-  const el = $(this);
-  const submitButton = $(el).find('button');
 
-  const name = el.find('input[name="name"]').val();
-  const email = el.find('input[name="email"]').val();
-  const phone = el.find('input[name="phone"]').val();
-  const primary_domain = el.find('input[name="primary_domain"]').val();
+  const formData = new FormData(this);
 
+  const data = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    phone: formData.get('phone'),
+    primary_domain: formData.get('primary_domain'),
+  };
 
-  var jqxhr = $.ajax({
-    url: url,
-    method: "GET",
-    data: $('Sheet1').serialize(),
-    beforeSend: function(){
-      submitButton.attr('disabled',true);
-      submitButton.text('sending....');
-    },
-    success:function(data) {
-      swal("Thank you for submit your data!", "", "success");
-      submitButton.attr('disabled',false);
-      submitButton.text('Submit');
-    } 
-  });
-})
-</script>
- <script>
- new WOW().init();
-</script>
+  const url = 'https://script.google.com/macros/s/AKfycbyfVNI5eovwnRB8xvm-Bd4gi0xrTsuO7FwshdA_vt2345uHwAvuuP1cubTiza9T_U9Gcg/exec';
 
- <script type="text/javascript">
-   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
- anchor.addEventListener('click', function (e) {
-     e.preventDefault();
+  try {
+    const submitButton = document.getElementById('submit-form');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
 
-     document.querySelector(this.getAttribute('href')).scrollIntoView({
-         behavior: 'smooth'
-     });
- });
+    const response = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const result = await response.json();
+
+    if (result.result === 'success') {
+      alert('Thank you for submitting your data!');
+      this.reset();
+    } else {
+      throw new Error(result.error || 'An error occurred while submitting your data.');
+    }
+  } catch (error) {
+    alert('Failed to submit. Please try again.');
+    console.error(error);
+  } finally {
+    const submitButton = document.getElementById('submit-form');
+    submitButton.disabled = false;
+    submitButton.textContent = 'Submit';
+  }
 });
