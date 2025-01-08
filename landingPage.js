@@ -1,11 +1,11 @@
-var $form = $('form#Rename_this'),
-url = 'https://docs.google.com/spreadsheets/d/1eweoJ9-eoWIeXkrilnuTC2z3U3cFVdCgD1_ZpWrTHQk'
+var $form = $('Sheet1'),
+url = 'https://script.google.com/macros/s/AKfycbyfVNI5eovwnRB8xvm-Bd4gi0xrTsuO7FwshdA_vt2345uHwAvuuP1cubTiza9T_U9Gcg/exec'
 
 $.validate({
   lang: 'en'
 });
 
-$('#Rename_this').on('submit', function(e) {
+$('Sheet1').on('submit', function(e) {
   e.preventDefault();
   
   const el = $(this);
@@ -20,7 +20,7 @@ $('#Rename_this').on('submit', function(e) {
   var jqxhr = $.ajax({
     url: url,
     method: "GET",
-    data: $('#Rename_this').serialize(),
+    data: $('Sheet1').serialize(),
     beforeSend: function(){
       submitButton.attr('disabled',true);
       submitButton.text('sending....');
