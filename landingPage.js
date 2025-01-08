@@ -10,7 +10,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
     primary_domain: formData.get('primary_domain'),
   };
 
-  const url = 'https://script.google.com/macros/s/AKfycbyfVNI5eovwnRB8xvm-Bd4gi0xrTsuO7FwshdA_vt2345uHwAvuuP1cubTiza9T_U9Gcg/exec';
+  const url = 'https://script.google.com/macros/s/AKfycbxUQd-S4WEK2xqRLkPOCTp1MdrAawOahEwXVOZIl5unNson3sC8oRrFOSCUlQoIdfhYyQ/exec';
 
   try {
     const submitButton = document.getElementById('submit-form');
