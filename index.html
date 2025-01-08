@@ -1,169 +1,283 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* General Reset */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #ffffff; /* White background */
+        color: #000000; /* Black text */
+      }
+
+      /* Container and Form Styles */
+      .container {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .field {
+        margin-bottom: 20px;
+      }
+
+      .label {
+        font-weight: bold;
+        color: #d29f0e; /* Gold color for labels */
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      .input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #d29f0e; /* Gold border */
+        border-radius: 4px;
+        font-size: 16px;
+        color: #000000;
+      }
+
+      .input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #000000; /* Black focus border */
+      }
+
+      /* Radio and Checkbox Styles */
+      .control {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .radio,
+      .checkbox {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+      }
+
+      /* Buttons */
+      .button {
+        width: 100%;
+        padding: 10px;
+        background-color: #d29f0e; /* Gold background */
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff; /* White text */
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s ease;
+      }
+
+      .button:hover {
+        background-color: #000000; /* Black background on hover */
+      }
+
+      .button.is-danger {
+        background-color: #000000; /* Black background for cancel button */
+      }
+
+      .button.is-danger:hover {
+        background-color: #d29f0e; /* Gold background on hover */
+      }
+
+      /* Responsive Layout */
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+        }
+
+        .input,
+        textarea {
+          font-size: 14px;
+        }
+
+        .button {
+          font-size: 14px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <section class="hero is-primary is-bold">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">Data Entry Form</h1>
-        </div>
+    <section>
+      <div class="container">
+        <h1 class="title" style="text-align: center; color: #d29f0e;">
+          Creative Pixel Registration
+        </h1>
+        <form id="form" method="POST">
+          <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Full Name"
+                name="Name"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">School-Course</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="e.g HAU-SOC"
+                name="School-Course"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Date of Shoot</label>
+            <div class="control">
+              <input
+                class="input"
+                type="date"
+                name="DOS"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Contact #</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="09XXX"
+                name="Contact"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Address</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="e.g Angeles City"
+                name="Address"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input
+                class="input"
+                type="email"
+                placeholder="Your Email"
+                name="Email"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Year Level</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="Year Level" value="College" /> College
+              </label>
+              <label class="radio">
+                <input type="radio" name="Year Level" value="High School" />
+                High School
+              </label>
+            </div>
+            <div class="control">
+              <label class="label">Graduating Year</label>
+              <input
+                class="input"
+                type="text"
+                placeholder="e.g 2025"
+                name="Year"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Graduation Package</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="Package" value="A" /> Package A
+              </label>
+              <label class="radio">
+                <input type="radio" name="Package" value="B" /> Package B
+              </label>
+              <label class="radio">
+                <input type="radio" name="Package" value="C" /> Package C
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Photoshoot</label>
+            <div class="control">
+              <label class="checkbox">
+                <input type="checkbox" name="Photoshoot" value="Birthday" />
+                Birthday
+              </label>
+              <label class="checkbox">
+                <input
+                  type="checkbox"
+                  name="Photoshoot"
+                  value="Family Picture"
+                />
+                Family Picture
+              </label>
+              <label class="checkbox">
+                <input
+                  type="checkbox"
+                  name="Photoshoot"
+                  value="Maternity Shoot"
+                />
+                Maternity Shoot
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Payments</label>
+            <div class="control">
+              <label class="checkbox">
+                <input type="checkbox" name="Payment" value="PAID" />
+                Full Payment
+              </label>
+              <label class="label">Deposit</label>
+              <input
+                class="input"
+                type="text"
+                placeholder="minimum of 500"
+                name="payment"
+              />
+            </div>
+          </div>
+
+          <div class="field is-grouped">
+            <button class="button" type="submit" id="submit-button">
+              Submit
+            </button>
+            <button class="button is-danger" type="reset">
+              Cancel
+            </button>
+          </div>
+        </form>
+        <div id="message"></div>
       </div>
     </section>
-    <form id="form" class="container m-4 pl-4" method="POST">
-      <div class="field">
-        <label class="label">Name</label>
-        <div class="control">
-          <input
-            class="input"
-            type="text"
-            placeholder="Your Name"
-            name="Name"
-          />
-        </div>
-      </div>
+  </body>
+</html>
 
-      <div class="field">
-        <label class="label">School-Course</label>
-        <div class="control">
-          <input
-            class="input"
-            type="text"
-            placeholder="e.g HAU-SOC"
-            name="School-Course"
-          />
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Date of Shoot</label>
-        <div class="control">
-          <input
-            class="input"
-            type="date"
-            placeholder="Your Date of Shoot"
-            name="DOS"
-          />
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Contact #</label>
-        <div class="control">
-          <input
-            class="input"
-            type="text"
-            placeholder="0965390..."
-            name="Contact"
-          />
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Address</label>
-        <div class="control">
-          <input
-            class="input"
-            type="text"
-            placeholder="e.g Angeles City"
-            name="Address"
-          />
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Email</label>
-        <div class="control">
-          <input
-            class="input"
-            type="email"
-            placeholder="Your Email"
-            name="Email"
-          />
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Year Level</label>
-        <div class="control">
-          <label class="radio">
-            <input type="radio" name="Year Level" value="A" /> Collage
-          </label>
-          <label class="radio">
-            <input type="radio" name="Year Level" value="B" /> High School
-          </label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Graduation Package</label>
-        <div class="control">
-          <label class="radio">
-            <input type="radio" name="Package" value="A" /> Package A
-          </label>
-          <label class="radio">
-            <input type="radio" name="Package" value="B" /> Package B
-          </label>
-          <label class="radio">
-            <input type="radio" name="Package" value="C" /> Package C
-          </label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Photoshoot</label>
-        <div class="control">
-          <label class="checkbox">
-            <input type="checkbox" name="Photoshoot" value="Birthday" /> Birthday
-          </label>
-          <label class="checkbox">
-            <input type="checkbox" name="Photoshoot" value="Family Picture" /> Family Picture
-          </label>
-          <label class="checkbox">
-            <input type="checkbox" name="Photoshoot" value="Maternity Shoot" /> Maternity Shoot
-        </div>
-      </div>
-
-      <!--<div class="field">
-        <label class="label">Additional Information</label>
-        <div class="control">
-          <textarea
-            class="textarea"
-            placeholder="Any additional information"
-            name="Notes"
-          ></textarea>
-        </div>
-      </div> -->
-
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-primary" type="submit" id="submit-button">
-            Submit
-          </button>
-        </div>
-        <div class="control">
-          <button class="button is-danger">Cancel</button>
-        </div>
-      </div>
-    </form>
-    <div
-      id="message"
-      style="
-        display: none;
-        margin: 20px;
-        font-weight: bold;
-        color: green;
-        padding: 8px;
-        background-color: beige;
-        border-radius: 4px;
-        border-color: aquamarine;
-      "
-    ></div>
 
     <script>
       document.getElementById("form").addEventListener("submit", function (e) {
@@ -227,5 +341,3 @@
     </script>
   </body>
 </html>
-dataentryform-youtubecopy.html
-Displaying dataentryform-youtubecopy.html.
