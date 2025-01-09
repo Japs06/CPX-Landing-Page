@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Pixel - Home</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .logo-container {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #d29f0e;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .box:hover {
+            background-color: #b58c0c;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                max-width: 600px;
+            }
+            .box {
+                width: calc(50% - 10px);
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="logo-container">
+        <img src="CPX-logo.png" alt="Creative Pixel Logo" class="logo">
+    </div>
+    <div class="container">
+        <a href="gradpic.html" class="box">
+            Graduation Picture
+        </a>
+        <a href="events.html" class="box">
+            Events Photoshoot
+        </a>
+    </div>
+</body>
+</html>
