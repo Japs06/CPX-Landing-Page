@@ -1,17 +1,23 @@
-<!DOCTYPE html>
 <html>
+
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="gradpic.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+
+    </style>
   </head>
   <body>
     <a href="index.html" class="back-button">Back to Home</a>
-    <section> 
+    <section>
       <div class="container">
         <h1 class="title" style="text-align: center; color: #d29f0e;">
           Creative Pixel Registration
         </h1>
-        <form id="form" method="POST">
+
+        <form id="form" method="POST" onsubmit="return validateForm()">
           <div class="field">
             <label class="label">Name</label>
             <div class="control">
@@ -34,6 +40,7 @@
                 placeholder="e.g HAU-SOC"
                 name="School-Course"
                 required
+                oninput="this.value = this.value.toUpperCase()"
               />
             </div>
           </div>
@@ -107,7 +114,6 @@
                 type="text"
                 placeholder="e.g 2025"
                 name="Year"
-                required
               />
             </div>
           </div>
@@ -127,22 +133,30 @@
             </div>
           </div>
 
+
           <div class="field">
             <label class="label">Payments</label>
             <div class="control">
-              <label class="checkbox">
-                <input type="checkbox" name="Payment" value="PAID" />
+              <label class="radio">
+                <input type="radio" name="Payment" value="PAID" id="full-payment-button" />
                 Full Payment
               </label>
-              <label class="label">Deposit</label>
-              <input
-                class="input"
-                type="text"
-                placeholder="minimum of 500"
-                name="Deposit"
-              />
+              <label class="radio">
+                <input type="radio" name="Payment" value="DEPOSIT" id="deposit-button" />
+                Deposit
+              </label>
+              <div id="deposit-input-container" style="display: none;">
+                <label class="label">Deposit Amount</label>
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="minimum of 500"
+                  name="Deposit"
+                />
+              </div>
             </div>
           </div>
+
 
           <div class="field is-grouped">
             <button class="button" type="submit" id="submit-button">
@@ -156,11 +170,9 @@
         <div id="message"></div>
       </div>
     </section>
-  </body>
-</html>
-
 
     <script>
+
       document.getElementById("form").addEventListener("submit", function (e) {
         e.preventDefault(); // Prevent the default form submission
         document.getElementById("message").textContent = "Submitting..";
@@ -207,10 +219,10 @@
             document.getElementById("form").reset();
 
             setTimeout(function () {
-              document.getElementById("message").textContent = "";
-              document.getElementById("message").style.display = "none";
-            }, 2600);
+            window.location.href = "index.html";
+            }, 500);
           })
+          
           .catch(function (error) {
             // Handle errors, you can display an error message here
             console.error(error);
@@ -219,6 +231,18 @@
             document.getElementById("message").style.display = "block";
           });
       });
+
+          document.getElementById("full-payment-button").addEventListener("click", function () {
+            var depositInputContainer = document.getElementById("deposit-input-container");
+            depositInputContainer.style.display = "none";
+          });
+
+          document.getElementById("deposit-button").addEventListener("click", function () {
+            var depositInputContainer = document.getElementById("deposit-input-container");
+            depositInputContainer.style.display = "block";
+          });
     </script>
+
   </body>
 </html>
+
