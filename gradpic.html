@@ -24,8 +24,9 @@
               <input
                 class="input"
                 type="text"
-                placeholder="Full Name"
+                placeholder="LASTNAME, FIRSTNAME, M.I"
                 name="Name"
+                oninput="this.value = this.value.toUpperCase()"
                 required
               />
             </div>
@@ -66,6 +67,7 @@
                 placeholder="09XXX"
                 name="Contact"
                 required
+                oninput="this.value = this.value.toUpperCase()"
               />
             </div>
           </div>
@@ -79,6 +81,7 @@
                 placeholder="e.g Angeles City"
                 name="Address"
                 required
+                oninput="this.value = this.value.toUpperCase()"
               />
             </div>
           </div>
@@ -103,10 +106,13 @@
                 <input type="radio" name="Year Level" value="College" /> College
               </label>
               <label class="radio">
-                <input type="radio" name="Year Level" value="High School" />
-                High School
+                <input type="radio" name="Year Level" value="High School" /> High School
+              </label>
+              <label class="radio">
+                <input type="radio" name="Year Level" value="Elementary" /> Elementary
               </label>
             </div>
+            <br>
             <div class="control">
               <label class="label">Graduating Year</label>
               <input
@@ -114,6 +120,8 @@
                 type="text"
                 placeholder="e.g 2025"
                 name="Year"
+                required
+                oninput="this.value = this.value.toUpperCase()"
               />
             </div>
           </div>
@@ -122,17 +130,33 @@
             <label class="label">Graduation Package</label>
             <div class="control">
               <label class="radio">
-                <input type="radio" name="Package" value="A" /> Package A
+                <input type="radio" name="Package" value="A " /> Package A
               </label>
               <label class="radio">
-                <input type="radio" name="Package" value="B" /> Package B
+                <input type="radio" name="Package" value="B " /> Package B
               </label>
               <label class="radio">
-                <input type="radio" name="Package" value="C" /> Package C
+                <input type="radio" name="Package" value="C " /> Package C
               </label>
             </div>
           </div>
 
+          <div class="field">
+            <label class="label">Additionals</label>
+            <p class="help">Ask the front-desk for assistance</p>
+            <div class="control">
+              <textarea
+                class="textarea"
+                placeholder="COUPLE, FAMILY, GROUP&#10;ADD-PRINTS, ADD-FRAME . . ."
+                name="Additionals"
+                oninput="this.value = this.value.toUpperCase()"
+              ></textarea>
+            </div>
+          </div>
+          
+          <div class="field">
+            
+          </div>
 
           <div class="field">
             <label class="label">Payments</label>
@@ -245,4 +269,3 @@
 
   </body>
 </html>
-
