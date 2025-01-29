@@ -57,6 +57,12 @@ textarea:focus {
   font-size: 16px;
 }
 
+
+.textarea {
+  resize: vertical; /* Make textarea vertically scrollable */
+  height: 50px; /* Set max height to prevent textarea from overflowing */
+}
+
 /* Buttons */
 .button {
   width: 100%;
@@ -71,6 +77,12 @@ textarea:focus {
   text-align: center;
   transition: background-color 0.3s ease;
 }
+
+.help{
+  font-size: 12px;
+  color: #f8c63b; /* Red text for help messages */
+}
+
 
 .button:hover {
   background-color: #000000; /* Black background on hover */
